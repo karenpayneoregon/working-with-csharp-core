@@ -3,7 +3,7 @@
 
 # About
 
-
+There are many project and more to come.
 
 ## Globbing example solution folder
 
