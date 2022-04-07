@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<LangVersion>9.0</LangVersion>
+		<TargetFramework>net5.0</TargetFramework>
+	</PropertyGroup>
+
+	<!--
+		Most don't know in Core projects we have task such as create folders
+	-->
+	<Target Name="MakeLogFolder" AfterTargets="Build">
+		<MakeDir Directories="$(OutDir)Logs" />
+	</Target>
+	<Target Name="MakeMailFolder" AfterTargets="Build">
+		<MakeDir Directories="$(OutDir)Pickup\Temp" />
+	</Target>
+</Project>

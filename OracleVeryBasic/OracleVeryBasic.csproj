@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	  <LangVersion>9.0</LangVersion>
+	  <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+
+	<ItemGroup>
+		<PackageReference Include="Oracle.ManagedDataAccess.Core" Version="3.21.41" />
+	</ItemGroup>
+
+</Project>

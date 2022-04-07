@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<LangVersion>9.0</LangVersion>
+		<TargetFramework>net5.0</TargetFramework>
+		<ApplicationIcon>Csharp.ico</ApplicationIcon>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="System.Drawing.Common" Version="5.0.3" />
+	</ItemGroup>
+
+</Project>
