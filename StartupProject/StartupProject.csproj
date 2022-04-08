@@ -15,4 +15,10 @@
 	<Target Name="MakeMailFolder" AfterTargets="Build">
 		<MakeDir Directories="$(OutDir)Pickup\Temp" />
 	</Target>
+	<ItemGroup>
+	  <None Remove="readme.md" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Content Include="readme.md" />
+	</ItemGroup>
 </Project>
