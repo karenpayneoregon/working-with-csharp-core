@@ -1,4 +1,5 @@
 ﻿using System;
+using StartupProject.LanguageExtensions;
 
 namespace StartupProject
 {
@@ -6,7 +7,10 @@ namespace StartupProject
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+
+
+            Console.ReadLine();
+
         }
     }
 }
