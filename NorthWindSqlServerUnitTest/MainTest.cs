@@ -6,8 +6,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NorthWindCoreLibrary.Classes;
 using NorthWindCoreLibrary.Data;
 using NorthWindCoreLibrary.Models;
+using NorthWindCoreLibrary.Projections;
 using NorthWindSqlServerUnitTest.Base;
 using Oed.EntityFrameworkCoreHelpers.LanguageExtensions;
 
@@ -32,6 +34,7 @@ namespace NorthWindSqlServerUnitTest
 
         }
 
+
         /// <summary>
         /// Demonstrates using ToQueryString to get a string representation of the query used
         /// </summary>
@@ -47,6 +50,7 @@ FROM [Categories] AS [c]";
 
             // act
             var categoryQueryString = context.Categories.ToQueryString();
+            
             Debug.WriteLine(categoryQueryString);
 
             // assert
@@ -66,6 +70,18 @@ FROM [Categories] AS [c]";
             Debug.WriteLine(productsQueryString);
 
             Assert.IsTrue(productsQueryString.Contains("DECLARE @__categoryIdentifier_0 int = 2;"));
+        }
+
+
+        [TestMethod]
+        [TestTraits(Trait.EntityFramework)]
+        public async Task ToQueryStringProjection()
+        {
+            await using var context = new NorthwindContext();
+
+            var result = context.Customers.Select(CustomerItem.Projection).ToQueryString();
+            Console.WriteLine(result);
+
         }
 
         [TestMethod]
@@ -112,8 +128,5 @@ FROM [Categories] AS [c]";
 
             Debug.WriteLine($"original name: '{originalProductName}' current: '{currentProductName}'");
         }
-
-
-
     }
 }

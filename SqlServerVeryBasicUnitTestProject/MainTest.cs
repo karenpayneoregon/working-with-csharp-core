@@ -17,6 +17,17 @@ namespace SqlServerVeryBasicUnitTestProject
     public partial class MainTest : TestBase
     {
         [TestMethod]
+        [TestTraits(Trait.PlaceHolder)]
+        public void UserNames()
+        {
+            var array = SqlServerOperations.UserNameArray2();
+            foreach (var name in array)
+            {
+                Console.WriteLine(name);
+            }
+        }
+
+        [TestMethod]
         [TestTraits(Trait.SqlDataProvider)]
         public void ReadCountriesWithSelectOptionTest()
         {

@@ -16,7 +16,7 @@ Recommend staying with the default as all documentation points to the default sc
 - [Working the keyboard](https://karenpayneoregon.github.io/visual-studio/keyboard.html) (Karen)
 - 
 
-## Who do I know about shortcuts for common operations?
+## Shortcuts for common operations
 
 Best way is to navigate the menu system. Some shortcuts like comment/uncomment code is buried as shown below. 
 
@@ -71,7 +71,7 @@ A developer may have a file with hundreds of lines and wants to traverse to anot
 
 Resharper is a third party extension which Karen and Lindon use.
 
-[Postfix templates](https://www.jetbrains.com/help/resharper/Postfix_Templates.html) help you transform expressions that you have already typed without jumping backwards — just type a dot after an expression and pick a template from the completion list.
+[Postfix templates](https://www.jetbrains.com/help/resharper/Postfix_Templates.html) help you transform expressions that you have already typed without jumping backwards ï¿½ just type a dot after an expression and pick a template from the completion list.
 
 
 # Tips

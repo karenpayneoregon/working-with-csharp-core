@@ -53,5 +53,25 @@ namespace NorthWindCoreLibrary.Projections
             }
         }
 
+        public static Expression<Func<Customers, CustomerItem>> ProjectionByPhoneType(int phoneTypeIdentifier)
+        {
+
+                return (customers) => new()
+                {
+                    CustomerIdentifier = customers.CustomerIdentifier,
+                    CompanyName = customers.CompanyName,
+                    ContactId = customers.ContactId,
+                    ContactTitle = customers.ContactTypeIdentifierNavigation.ContactTitle,
+                    FirstName = customers.Contact.FirstName,
+                    LastName = customers.Contact.LastName,
+                    CountryIdentifier = customers.CountryIdentifier,
+                    Country = customers.CountryIdentifierNavigation.Name,
+                    ContactTypeIdentifier = customers.CountryIdentifier,
+                    OfficePhoneNumber = customers.Contact.ContactDevices.FirstOrDefault(contactDevices => contactDevices.PhoneTypeIdentifier == phoneTypeIdentifier).PhoneNumber,
+                    PhoneTypeIdentifier = customers.Contact.ContactDevices.FirstOrDefault().PhoneTypeIdentifier.HasValue ? customers.Contact.ContactDevices.FirstOrDefault().PhoneTypeIdentifier.Value: 0 ,
+                    LastChanged = customers.ModifiedDate.Value.ZeroPad()
+                };
+
+        }
     }
 }

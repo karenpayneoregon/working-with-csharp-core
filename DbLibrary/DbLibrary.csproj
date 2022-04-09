@@ -5,20 +5,9 @@
 	  <TargetFramework>net5.0</TargetFramework>
 	  <Description>For exposing sql parameters in data provider queries</Description>
 	  <Copyright>Karen Payne</Copyright>
-	  <PackageReleaseNotes>For .NET Core</PackageReleaseNotes>
-	  <PackageLicenseExpression>None</PackageLicenseExpression>
-	  <PackageIcon>sql_blue_24_24.png</PackageIcon>
-	  <PackageIconUrl />
-	  <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+
   </PropertyGroup>
 
-  <ItemGroup>
-    <None Remove="readme.md" />
-    <None Include="..\..\..\..\..\Users\paynek\Documents\Snagit\sql_blue_24_24.png">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
-  </ItemGroup>
 
   <ItemGroup>
     <Content Include="readme.md" />

@@ -266,7 +266,7 @@ namespace ArrayConsoleApp
 
             SingleContact[] contacts =
             {
-                new () { Name = "Eugene Jones", PhoneNumbers = new[] { "206-555-0108", "425-555-0001" } }, 
+                new() { Name = "Eugene Jones", PhoneNumbers = new[] { "206-555-0108", "425-555-0001" } }, 
                 new() { Name = "Mary Smith", PhoneNumbers = new[] { "650-555-0199" } }
             };
 

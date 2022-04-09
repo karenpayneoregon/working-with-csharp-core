@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
 using System.Threading.Tasks;
 using ConfigurationLibrary.Classes;
 using SqlServerVeryBasic.Models;
@@ -20,6 +21,32 @@ namespace SqlServerVeryBasic.Classes
         // what most novice developers write rather than the above
         //protected static string ConnectionString = "Server=.\\SQLEXPRESS;Database=NorthWind2020;Integrated Security=true";
 
+        #region Choices
+
+        public static List<string> UserNameArray1()
+        {
+            using var cn = new SqlConnection("Server=.\\SQLEXPRESS;Database=UserLoginExample;Integrated Security=true");
+            using var cmd = new SqlCommand { Connection = cn };
+
+            cmd.CommandText = "SELECT STRING_AGG(r1.UserName, ',') FROM ( SELECT username FROM dbo.users) AS r1;";
+
+            cn.Open();
+            return ((string)cmd.ExecuteScalar()).Split(',').ToList();
+        }
+        public static List<string> UserNameArray2()
+        {
+            using var cn = new SqlConnection("Server=.\\SQLEXPRESS;Database=UserLoginExample;Integrated Security=true");
+            using var cmd = new SqlCommand { Connection = cn };
+
+            cmd.CommandText = " SELECT username FROM dbo.users";
+
+            cn.Open();
+            var reader = cmd.ExecuteReader();
+            return (from IDataRecord r in reader select (string)r["UserName"]).ToList();
+
+        }
+
+        #endregion
         /// <summary>
         /// Return a list of <see cref="Country"/> suitable for a selection in a user interface
         /// </summary>

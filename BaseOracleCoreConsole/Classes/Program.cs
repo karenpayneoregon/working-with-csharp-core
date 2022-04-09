@@ -22,7 +22,7 @@ namespace BaseOracleCoreConsole
         [DllImport("user32.dll")]
         public static extern bool ShowWindow(System.IntPtr hWnd, int cmdShow);
         [ModuleInitializer]
-        public static void Init()
+        public static void DummyInit()
         {
             Console.Title = Operations.ApplicationSettings().Title;
             if (Operations.ApplicationSettings().FullScreen)

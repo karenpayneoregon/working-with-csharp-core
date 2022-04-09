@@ -177,9 +177,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArrayConsoleApp", "ArrayCon
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VendorsApp", "VendorsApp\VendorsApp.csproj", "{2BADBDF9-73A6-473C-973F-362B81D2E9E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicPatternMatching", "BasicPatternMatching\BasicPatternMatching.csproj", "{7163474D-9FBF-4452-93B1-3FA961B691D8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BasicPatternMatching", "BasicPatternMatching\BasicPatternMatching.csproj", "{7163474D-9FBF-4452-93B1-3FA961B691D8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StartupProject", "StartupProject\StartupProject.csproj", "{84B61A42-DACC-4290-889F-368DF3BE3A22}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StartupProject", "StartupProject\StartupProject.csproj", "{84B61A42-DACC-4290-889F-368DF3BE3A22}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BaseOracleCoreConsole1", "BaseOracleCoreConsole1\BaseOracleCoreConsole1.csproj", "{04144FD4-A469-4D8B-9E04-DA35A5E992D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthWind2022CoreLibrary", "NorthWind2022CoreLibrary\NorthWind2022CoreLibrary.csproj", "{5CBED1F3-43A0-43EC-A258-89947096B7F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthWind2022CoreLibraryUnitTest", "NorthWind2022CoreLibraryUnitTest\NorthWind2022CoreLibraryUnitTest.csproj", "{F1E243AE-2141-4273-BD55-EA6EF7D3371B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -399,6 +405,18 @@ Global
 		{84B61A42-DACC-4290-889F-368DF3BE3A22}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{84B61A42-DACC-4290-889F-368DF3BE3A22}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{84B61A42-DACC-4290-889F-368DF3BE3A22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04144FD4-A469-4D8B-9E04-DA35A5E992D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04144FD4-A469-4D8B-9E04-DA35A5E992D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04144FD4-A469-4D8B-9E04-DA35A5E992D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04144FD4-A469-4D8B-9E04-DA35A5E992D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CBED1F3-43A0-43EC-A258-89947096B7F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CBED1F3-43A0-43EC-A258-89947096B7F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CBED1F3-43A0-43EC-A258-89947096B7F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CBED1F3-43A0-43EC-A258-89947096B7F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1E243AE-2141-4273-BD55-EA6EF7D3371B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1E243AE-2141-4273-BD55-EA6EF7D3371B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1E243AE-2141-4273-BD55-EA6EF7D3371B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1E243AE-2141-4273-BD55-EA6EF7D3371B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -477,6 +495,8 @@ Global
 		{2BADBDF9-73A6-473C-973F-362B81D2E9E8} = {3BC84215-6DCA-417C-8E28-D7AC4F7A4874}
 		{7163474D-9FBF-4452-93B1-3FA961B691D8} = {F5626574-62C3-4B17-A106-6C09C8FCA9B1}
 		{84B61A42-DACC-4290-889F-368DF3BE3A22} = {F5626574-62C3-4B17-A106-6C09C8FCA9B1}
+		{5CBED1F3-43A0-43EC-A258-89947096B7F7} = {2ED57FC3-E985-4684-AE41-4DB22377B222}
+		{F1E243AE-2141-4273-BD55-EA6EF7D3371B} = {2ED57FC3-E985-4684-AE41-4DB22377B222}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7844FAA0-88C8-4C66-893C-89EE6B08EE2B}

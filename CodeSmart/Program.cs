@@ -1,25 +1,39 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using System.Text;
 using CodeSmart.Classes;
-
+using CodeSmart.Models;
 
 namespace CodeSmart
 {
-    class Program
+    partial class Program
     {
         static void Main(string[] args)
         {
-            //DictionaryCodeSamples();
+            Operations.Dummy();
         }
 
-        private static void DictionaryCodeSamples()
+    }
+
+    public class Customer
+    {
+
+    }
+
+    public class Operations
+    {
+        public static (string param1, Exception exception) Dummy()
         {
-            DictionaryExamples.AddToDictionaryReallyBad();
-            DictionaryExamples.AddToDictionaryConventional();
-            DictionaryExamples.AddToDictionaryBetter();
-            DictionaryExamples.AddToDictionaryBetterWithEmptyCheck();
+            try
+            {
+                return ("", null);
+            }
+            catch (Exception e)
+            {
+                return (null, e);
+            }
         }
     }
 }

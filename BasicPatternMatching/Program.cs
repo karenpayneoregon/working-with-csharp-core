@@ -14,6 +14,7 @@ namespace BasicPatternMatching
         static async Task Main(string[] args)
         {
             await Task.Delay(0);
+            StringPropertyIsNull();
         }
 
         private static async Task PerformingAssertsOnVariables()
