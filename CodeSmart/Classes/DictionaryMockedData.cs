@@ -30,7 +30,7 @@ namespace CodeSmart.Classes
             new()
             {
                 new ColorItem() { Id = 1, Name = "Red" },
-                new ColorItem() { Id = null, Name = "Yellow" },
+                new ColorItem() {  Name = "Yellow" },
                 new ColorItem() { Id = 1, Name = "Red" },
                 new ColorItem() { Name = "Green" },
                 new ColorItem() { Id = 1, Name = "Red" }

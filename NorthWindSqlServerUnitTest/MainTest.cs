@@ -11,6 +11,7 @@ using NorthWindCoreLibrary.Data;
 using NorthWindCoreLibrary.Models;
 using NorthWindCoreLibrary.Projections;
 using NorthWindSqlServerUnitTest.Base;
+using Oed.EntityFrameworkCoreHelpers.Classes;
 using Oed.EntityFrameworkCoreHelpers.LanguageExtensions;
 
 namespace NorthWindSqlServerUnitTest
@@ -83,6 +84,45 @@ FROM [Categories] AS [c]";
             Console.WriteLine(result);
 
         }
+
+        [TestMethod]
+        [TestTraits(Trait.Extensions)]
+        public void ConvertToTest()
+        {
+            // arrange
+            int[] values = { 9, 42, 60 };
+
+            // act
+            object[] objectArray = values.ToObjectArray(); 
+
+            // assert
+            CollectionAssert.AllItemsAreInstancesOfType(objectArray, typeof(int));
+
+        }
+
+        /// <summary>
+        /// EF Core permits finding by key via DbSet&lt;TEntity&gt;.Find(object[]) but not by
+        /// multiple keys which FindAllAsync does
+        /// https://social.technet.microsoft.com/wiki/contents/articles/53841.entity-framework-core-find-all-by-primary-key-c.aspx
+        /// </summary>
+        /// <returns></returns>
+        [TestMethod]
+        [TestTraits(Trait.EntityFramework)]
+        public async Task FindAllCustomersByPrimaryKeyTest()
+        {
+            // arrange
+            string[] expected = { "Bon app'", "QUICK Stop", "Wolski  Zajazd" };
+            var primaryKeys = new[] { 9, 42, 60 };
+
+            // act
+            await using var context = new NorthwindContext();
+            Customers[] results = await context.FindAllAsync<Customers>(primaryKeys.ToObjectArray());
+            string[] names = results.Select(customer => customer.CompanyName).ToArray();
+
+            // assert
+            CollectionAssert.AreEqual(expected, names);
+        }
+
 
         [TestMethod]
         [TestTraits(Trait.EntityFramework)]

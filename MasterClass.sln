@@ -183,9 +183,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StartupProject", "StartupPr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BaseOracleCoreConsole1", "BaseOracleCoreConsole1\BaseOracleCoreConsole1.csproj", "{04144FD4-A469-4D8B-9E04-DA35A5E992D5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthWind2022CoreLibrary", "NorthWind2022CoreLibrary\NorthWind2022CoreLibrary.csproj", "{5CBED1F3-43A0-43EC-A258-89947096B7F7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NorthWind2022CoreLibrary", "NorthWind2022CoreLibrary\NorthWind2022CoreLibrary.csproj", "{5CBED1F3-43A0-43EC-A258-89947096B7F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthWind2022CoreLibraryUnitTest", "NorthWind2022CoreLibraryUnitTest\NorthWind2022CoreLibraryUnitTest.csproj", "{F1E243AE-2141-4273-BD55-EA6EF7D3371B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NorthWind2022CoreLibraryUnitTest", "NorthWind2022CoreLibraryUnitTest\NorthWind2022CoreLibraryUnitTest.csproj", "{F1E243AE-2141-4273-BD55-EA6EF7D3371B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

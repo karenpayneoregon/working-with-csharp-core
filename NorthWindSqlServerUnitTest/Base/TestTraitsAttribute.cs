@@ -11,7 +11,8 @@ namespace NorthWindSqlServerUnitTest.Base
         /// Place holder 
         /// </summary>
         PlaceHolder,
-        EntityFramework
+        EntityFramework,
+        Extensions
     }
     /// <summary>
     /// Declarative class for using Trait enum about for traits on test method.

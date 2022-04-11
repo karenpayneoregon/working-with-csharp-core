@@ -12,7 +12,7 @@ namespace CodeSmart.Classes
     public class DictionaryExamples
     {
         /// <summary>
-        /// Brute force adding items to a dictionary where there may be dups
+        /// Brute force adding items to a dictionary where there may be duplicates
         /// </summary>
         public static void AddToDictionaryReallyBad()
         {
@@ -27,8 +27,7 @@ namespace CodeSmart.Classes
             {
                 foreach (ColorItem item in list)
                 {
-                    Debug.Assert(item.Id != null, "item.Id != null");
-                    dictionary.Add(item.Id.Value, item.Name);
+                    dictionary.Add(item.Id, item.Name);
                 }
             }
             catch (Exception ouchException)
@@ -54,10 +53,9 @@ namespace CodeSmart.Classes
             Dictionary<int, string> dictionary = new();
             List<ColorItem> list = DictionaryMockedData.ColorItems();
 
-            foreach (ColorItem item in list.Where(item => !dictionary.ContainsKey(item.Id.Value)))
+            foreach (ColorItem item in list.Where(item => !dictionary.ContainsKey(item.Id)))
             {
-                Debug.Assert(item.Id != null, "item.Id != null");
-                dictionary.Add(item.Id.Value, item.Name);
+                dictionary.Add(item.Id, item.Name);
             }
 
             foreach (KeyValuePair<int, string> kvp in dictionary)
@@ -77,7 +75,7 @@ namespace CodeSmart.Classes
 
             Dictionary<int, string> dictionary = DictionaryMockedData.ColorItems()
                 // ReSharper disable once PossibleInvalidOperationException
-                .GroupBy(colorItem => colorItem.Id.Value, colorItem => colorItem.Name)
+                .GroupBy(colorItem => colorItem.Id, colorItem => colorItem.Name)
                 .ToDictionary(group => group.Key, group => group.First());
 
             foreach (KeyValuePair<int, string> kvp in dictionary)
@@ -95,23 +93,8 @@ namespace CodeSmart.Classes
             Debug.WriteLine(nameof(AddToDictionaryBetterWithEmptyCheck));
             List<ColorItem> list = DictionaryMockedData.ColorItemsWithNullIdentifier();
 
-            // Best for simple check
-            //if (list.Any(x => x.Id is null))
-            //{
-            //    Debug.WriteLine("One or more empty keys");
-            //    return;
-            //}
-
-            // Need to also know indices?
-            var (hasNulls, indicesList) = list.NullIndices(x => x.Id is null);
-            if (hasNulls)
-            {
-                Debug.WriteLine($"Has null identifiers {string.Join(",", indicesList)}");
-                return;
-            }
-
             Dictionary<int, string> dictionary = list
-                .GroupBy(colorItem => colorItem.Id.Value, colorItem => colorItem.Name)
+                .GroupBy(colorItem => colorItem.Id, colorItem => colorItem.Name)
                 .ToDictionary(group => group.Key, group => group.First());
 
             foreach (KeyValuePair<int, string> kvp in dictionary)
