@@ -100,6 +100,38 @@ FROM [Categories] AS [c]";
 
         }
 
+        [TestMethod]
+        [TestTraits(Trait.EntityFramework)]
+        public async Task FindCustomerByPrimaryKey()
+        {
+            // arrange
+            int key = 60;
+            string expected = "Wolski  Zajazd";
+            
+            // act
+            await using var context = new NorthwindContext();
+            var customer = await context.Customers.FindAsync(key);
+
+            // assert
+            Assert.AreEqual(expected, customer.CompanyName);
+
+        }
+
+        [TestMethod]
+        [TestTraits(Trait.EntityFramework)]
+        public async Task FindCustomerByPrimaryKeyNotFound()
+        {
+            // arrange
+            int key = 99;
+
+            // act
+            await using var context = new NorthwindContext();
+            var customer = await context.Customers.FindAsync(key);
+
+            // assert
+            Assert.IsNull(customer);
+
+        }
         /// <summary>
         /// EF Core permits finding by key via DbSet&lt;TEntity&gt;.Find(object[]) but not by
         /// multiple keys which FindAllAsync does
