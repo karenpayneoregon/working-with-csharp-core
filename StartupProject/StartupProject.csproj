@@ -28,13 +28,11 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<PackageReference Include="ConfigurationLibrary" Version="1.0.1" />
 		<PackageReference Include="DbLibrary" Version="1.0.0" />
 		<PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
 	</ItemGroup>
 
-	<ItemGroup>
-	  <ProjectReference Include="..\Oed.ConfigurationLibrary\ConfigurationLibrary.csproj" />
-	</ItemGroup>
 
 	<ItemGroup>
 	  <None Update="appsettings.json">
