@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using NorthWindSqlServerUnitTest.Base;
 
 
 // ReSharper disable once CheckNamespace - do not change
@@ -15,6 +16,14 @@ namespace NorthWindSqlServerUnitTest
 
         private static string _InspectFileName1 = "EditInspectOriginalAndCurrentValue1.txt";
         private static string _InspectFileName2 = "EditInspectOriginalAndCurrentValue2.txt";
+
+        private List<CustomerCountry> _customerCountries() =>
+            new()
+            {
+                new() { Id = 15, Name = "Drachenblut Delikatessen", Country = "Germany" },
+                new () { Id = 22, Name = "Frankenversand", Country = "Germany" }
+            };
+
         [TestInitialize]
         public void Initialization()
         {

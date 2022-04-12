@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using NorthWind2022CoreLibrary.Data;
 
 
 // ReSharper disable once CheckNamespace - do not change
@@ -13,16 +14,12 @@ namespace NorthWind2022CoreLibraryUnitTest
     {
         private static string _InspectFileName1 = "EditInspectOriginalAndCurrentValue1.txt";
         private static string _InspectFileName2 = "EditInspectOriginalAndCurrentValue2.txt";
-        /// <summary>
-        /// Perform initialization before test runs using assertion on current test name.
-        /// </summary>
+
         [TestInitialize]
-        public void Initialization()
+        public async Task Initialization()
         {
-            if (TestContext.TestName == nameof(TestMethod1))
-            {
-                // TODO
-            }
+            // warm-up entity framework, shaves a little time off each unit test method
+            await using var context = new NorthwindContext();
         }
 
         /// <summary>

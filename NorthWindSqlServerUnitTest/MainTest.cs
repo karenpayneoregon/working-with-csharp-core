@@ -86,6 +86,39 @@ FROM [Categories] AS [c]";
         }
 
         [TestMethod]
+        [TestTraits(Trait.EntityFramework)]
+        public async Task IQueryableBetweenCustomersTest()
+        {
+            // arrange
+            int startValue = 12;
+            int endValue = 24;
+            string countryName = "Germany";
+
+            // act
+            await using var context = new NorthwindContext();
+            List<CustomerCountry> customerList = context.
+                Customers
+                .Include(country => country.CountryIdentifierNavigation)
+                /*
+                 * Between is the focus
+                 */
+                .Between(cust => cust.CustomerIdentifier, startValue, endValue)
+                .Select(cust => new CustomerCountry()
+                {
+                    Id = cust.CustomerIdentifier,
+                    Name = cust.CompanyName,
+                    Country = cust.CountryIdentifierNavigation.Name
+                })
+                .Where(item => item.Country == countryName)
+                .ToList();
+
+            // assert
+            Assert.IsTrue(customerList.SequenceEqual(_customerCountries(), new CustomerCountryEqualityComparer()));
+            
+        }
+
+
+        [TestMethod]
         [TestTraits(Trait.Extensions)]
         public void ConvertToTest()
         {

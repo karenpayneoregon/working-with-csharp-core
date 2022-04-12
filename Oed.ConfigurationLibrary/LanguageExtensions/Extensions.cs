@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ConfigurationLibrary.Classes
+namespace ConfigurationLibrary.LanguageExtensions
 {
     public static class Extensions
     {

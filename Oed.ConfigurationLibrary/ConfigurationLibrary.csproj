@@ -3,6 +3,16 @@
 	<PropertyGroup>
 		<LangVersion>9.0</LangVersion>
 		<TargetFramework>net5.0</TargetFramework>
+		<Description>Provides access to appsettings.json for connection strings</Description>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<Copyright>Karen Payne 2022</Copyright>
+		<PackageLicenseExpression>Freebie</PackageLicenseExpression>
+		<PackageIcon>configuration.png</PackageIcon>
+		<PackageIconUrl />
+		<Company>Karen Payne</Company>
+		<AssemblyVersion>1.0.1.1</AssemblyVersion>
+		<FileVersion>1.0.1.1</FileVersion>
+		<Version>1.0.1</Version>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -11,5 +21,12 @@
 		<PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="5.0.0" />
 		<PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="5.0.0" />
 		<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="5.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Include="assets\configuration.png">
+	    <Pack>True</Pack>
+	    <PackagePath></PackagePath>
+	  </None>
 	</ItemGroup>
 </Project>

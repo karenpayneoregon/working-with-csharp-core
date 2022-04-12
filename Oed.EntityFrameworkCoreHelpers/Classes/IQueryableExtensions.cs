@@ -4,7 +4,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
 
-namespace OracleNorthWindLibrary.Extensions
+namespace Oed.EntityFrameworkCoreHelpers.Classes
 {
     /// <summary>
     /// Extension method for EF Core, written with EF Core 5 tested
@@ -13,6 +13,8 @@ namespace OracleNorthWindLibrary.Extensions
     /// <remarks>
     /// When moving to a newer version of EF Core make sure to check for
     /// breaking changes that may affect these methods.
+    ///
+    /// And for the new-comers this is code to first work with <see cref="Expression"/> first and ease into this code
     /// </remarks>
     public static class IQueryableExtensions
     {
@@ -29,7 +31,7 @@ namespace OracleNorthWindLibrary.Extensions
         public static IQueryable<TSource> Between<TSource, TKey>(this IQueryable<TSource> source, Expression<Func<TSource, TKey>> keySelector, TKey low, TKey high) where TKey : IComparable<TKey>
         {
             // Get a ParameterExpression node of the TSource that is used in the expression tree
-            ParameterExpression sourceParameter = Expression.Parameter(typeof(TSource));
+            //ParameterExpression sourceParameter = Expression.Parameter(typeof(TSource));
 
             // Get the body and parameter of the lambda expression
             Expression body = keySelector.Body;
@@ -59,7 +61,7 @@ namespace OracleNorthWindLibrary.Extensions
             MethodCallExpression whereCallExpression = Expression.Call(
                 typeof(Queryable),
                 "Where",
-                new Type[] { source.ElementType },
+                new[] { source.ElementType },
                 source.Expression,
                 Expression.Lambda<Func<TSource, bool>>(andExpression, parameter!));
 
