@@ -195,6 +195,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AsyncCancelTaskList", "Asyn
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlobbingCoreUnitTestProject", "GlobbingCoreUnitTestProject\GlobbingCoreUnitTestProject.csproj", "{AB235D2F-6F69-4761-9103-313C730246B8}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnhandledConsole", "UnhandledConsole\UnhandledConsole.csproj", "{F8E60501-FED1-44BD-8E57-56501A3BBDEF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -433,6 +435,10 @@ Global
 		{AB235D2F-6F69-4761-9103-313C730246B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AB235D2F-6F69-4761-9103-313C730246B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AB235D2F-6F69-4761-9103-313C730246B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8E60501-FED1-44BD-8E57-56501A3BBDEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8E60501-FED1-44BD-8E57-56501A3BBDEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8E60501-FED1-44BD-8E57-56501A3BBDEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8E60501-FED1-44BD-8E57-56501A3BBDEF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -517,6 +523,7 @@ Global
 		{527FAD42-88AA-4538-8D69-D6965ECCE9A6} = {7C77898A-0548-4C84-ADB3-A5A6ECCA0BFD}
 		{DCB64022-FBE4-4D40-BD10-4A7FD0427B2C} = {527FAD42-88AA-4538-8D69-D6965ECCE9A6}
 		{AB235D2F-6F69-4761-9103-313C730246B8} = {8C5DB7A7-B780-476A-8FA3-F409BDA58796}
+		{F8E60501-FED1-44BD-8E57-56501A3BBDEF} = {ACE91DCD-67F5-46E1-AD75-BFFAB830C79B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7844FAA0-88C8-4C66-893C-89EE6B08EE2B}

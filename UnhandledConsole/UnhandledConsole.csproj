@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net5.0</TargetFramework>
+		<LangVersion>9.0</LangVersion>
+	</PropertyGroup>
+
+	<PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+		<!--
+		https://docs.microsoft.com/en-us/dotnet/api/vslangproj.projectconfigurationproperties.debugsymbols?view=visualstudiosdk-2019
+		-->
+		<DebugSymbols>true</DebugSymbols>
+
+		<!--
+		https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-options/code-generation#debugtype
+		-->
+		<DebugType>Full</DebugType>
+
+		<!-- Only enable the following if the line numbers mismatch -->
+		<!--<Optimize>false</Optimize>-->
+
+		<!--
+      Additional properties which may impact how printed line numbers match the source code line numbers are listed here:
+      https://docs.microsoft.com/en-us/dotnet/core/run-time-config/compilation
+    -->
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\DirectoryHelpersLibrary\DirectoryHelpersLibrary.csproj" />
+	</ItemGroup>
+
+</Project>
