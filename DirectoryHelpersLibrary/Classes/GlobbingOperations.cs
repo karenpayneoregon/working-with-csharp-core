@@ -57,5 +57,39 @@ namespace DirectoryHelpersLibrary.Classes
 
         }
 
+        public delegate void OnTraverse(string sender);
+        public static event OnTraverse TraverseHandler;
+        public static string FolderNotExistsText => "Folder does not exists";
+
+        /// <summary>
+        /// Folder to search/filter 
+        /// </summary>
+        /// <param name="folderName"></param>
+        /// <param name="includePatterns">pattern match to filter e.g. **/s*.cs for all .cs files beginning with s in all folders under folderName </param>
+        /// <param name="fileExtensions">file extensions without period to get e.g. cs for csharp, txt for text file etc</param>
+        public static void GenericGetFiles(string folderName, string[] includePatterns, string[] fileExtensions)
+        {
+
+            if (!Directory.Exists(folderName))
+            {
+                TraverseHandler?.Invoke(FolderNotExistsText);
+                return;
+            }
+
+            IEnumerable<string> filterFiles = Utilities.FilterFiles(folderName, fileExtensions);
+            InMemoryDirectoryInfo dirInfo = new(folderName, filterFiles);
+
+            Matcher matcher = new();
+            matcher.AddIncludePatterns(includePatterns);
+
+            PatternMatchingResult patternMatching = matcher.Execute(dirInfo);
+
+            foreach (var match in patternMatching.Files)
+            {
+                TraverseHandler?.Invoke(Path.Combine(folderName, match.Stem).Replace("/", "\\"));
+            }
+
+        }
+
     }
 }

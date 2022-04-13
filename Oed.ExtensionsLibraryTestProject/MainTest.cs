@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
+using System.Runtime.Versioning;
 using EnumerationLibrary.Classes;
 using EnumerationLibrary.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -120,9 +122,14 @@ namespace Oed.ExtensionsLibraryTestProject
         [TestTraits(Trait.StringArrayExtensions)]
         public void IntArrayAverage()
         {
+            // arrange
             string[] values = { "10", "20", "10", "30" };
 
-            Assert.AreEqual(values.ToIntegerArray().Average(), 17.5);
+
+            // act
+            var result = values.ToIntegerArray();
+
+            Assert.AreEqual(result.Average(), 17.5);
         }
 
         /// <summary>
@@ -132,10 +139,14 @@ namespace Oed.ExtensionsLibraryTestProject
         [TestTraits(Trait.StringArrayExtensions)]
         public void GetNonIntegerIndexesTest()
         {
+            // arrange
             string[] values = { "100", "100B", "200", "200B", "1", "", "A", ".4", "2.3" };
             int[] expected = { 1, 3, 5, 6, 7, 8 };
+
+            // act
             var results = values.GetNonIntegerIndexes();
 
+            // assert
             CollectionAssert.AreEqual(expected, results);
 
         }
@@ -147,13 +158,44 @@ namespace Oed.ExtensionsLibraryTestProject
         [TestTraits(Trait.StringArrayExtensions)]
         public void ToIntegerPreserveArrayTest()
         {
+            // arrange
             string[] values = { "100", "100B", "200", "200B", "1", "", "A", ".4", "2.3" };
-
             int[] expected = { 100, 0, 200, 0, 1, 0, 0, 0, 0 };
+
+            // act
             var results = values.ToIntegerPreserveArray();
 
+            // assert
             CollectionAssert.AreEqual(expected, results);
 
         }
+
+        [TestMethod]
+        [TestTraits(Trait.StringExtensions)]
+        public void SplitCamelCaseTest()
+        {
+            // arrange
+            string name = "KarenPayne";
+            string expected = "Karen Payne";
+
+            // act
+            var result = name.SplitCamelCase();
+
+            // assert
+            Assert.AreEqual(expected, result);
+        }
+
+        [TestMethod]
+        [TestTraits(Trait.PlaceHolder)]
+        public void HasValueTest()
+        {
+            var value = Assembly.GetEntryAssembly()?
+                .GetCustomAttribute<TargetFrameworkAttribute>()?
+                .FrameworkName.Contains("Core");
+
+            Assert.IsTrue(value.HasValue);
+        }
+
+
     }
 }
