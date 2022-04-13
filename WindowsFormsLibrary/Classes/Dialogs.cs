@@ -318,7 +318,8 @@ namespace WindowsFormsLibrary.Classes
                 Caption = "Information",
                 SizeToContent = true,
                 Heading = heading,
-                Icon = TaskDialogIcon.Warning,
+                Icon = new TaskDialogIcon(Properties.Resources.exclamation24),
+                Footnote = new TaskDialogFootnote() { Text = "Karen Payne code sample" },
                 Buttons = new TaskDialogButtonCollection() { okayButton }
             };
             

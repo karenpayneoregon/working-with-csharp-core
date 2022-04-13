@@ -158,4 +158,13 @@ A useful shortcut. Karen will talk about this
 
 ![Figure9](assets/NavigatingCode/Figure9.png)
 
+# Close current editor window
+
+Search for `Window.CloseDocumentWindow` and assign a key combination, be careful that another itemm is not using it.
+
+For example, I would not assign <kbd>control</kbd> + <kbd>shift</kbd> + <kbd>W</kbd> as I use that for selecting a word.
+
+
+&nbsp;&nbsp;![img](https://img.shields.io/badge/Karen%20Payne-Visual%20Studio%20training-lightgrey)
+
 

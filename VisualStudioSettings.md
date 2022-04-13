@@ -1,7 +1,7 @@
 # Folders
 
 
-# Base folder
+## Base folder
 
 All projects need/ to reside under `C:\OED`, outside of this folder OED security denies access to run your projects.
 
@@ -11,7 +11,7 @@ When developers place their projects in a common location there is a) no guessin
 
 > In simple words, an absolute path refers to the same location in a file system relative to the root directory, whereas a relative path points to a specific location in a file system relative to the current directory you are working on.
 
-# Versioning 
+## Versioning 
 
 Each version of Visual Studio offers new IDE functionality and language features. For instance, VS2015 does not understand .NET Core 5 framework as .NET Core Framework was released in VS2019. VS2019 does not understand .NET Core 6 as .NET Core 6 was released with VS2022.
 
@@ -41,3 +41,5 @@ To ensure projects are placed in the correct location, under `Tools` menu, `Opti
 Make sure to check where the cloned repository will be placed. It's possible that the default path may be under your user profile and if so, make sure to change to the recommend paths above.
 
 ![image](assets/CloneRespository1.png)
+
+&nbsp;&nbsp;![img](https://img.shields.io/badge/Karen%20Payne-Visual%20Studio%20training-lightgrey)

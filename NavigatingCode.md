@@ -47,3 +47,5 @@ Next in the above code there is a class and we want to view this and keep the ot
 In the secondary window navigation between windows is done with `<` `>` or clicking the circles between `<` `>`.
 
 ![figure2](assets/NavigatingCode/Figure2.png)
+
+&nbsp;&nbsp;![img](https://img.shields.io/badge/Karen%20Payne-Visual%20Studio%20training-lightgrey)

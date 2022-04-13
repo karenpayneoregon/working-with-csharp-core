@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.Collections.Generic;
+using DataReaderLibrary.LanguageExtensions;
 using Oracle.ManagedDataAccess.Client;
 using OracleVeryBasic.Models;
 
@@ -21,12 +22,16 @@ namespace OracleVeryBasic.Classes
 
                 while (reader.Read())
                 {
-                    list.Add(new Category() { Id = reader.GetInt32(0), Name = reader.GetString(1) });
+                    list.Add(new Category() { Id = reader.GetInt32(0), Name = reader.SafeGetString(1) });
                 }
             }
-            catch (Exception ex)
+            catch (OracleException oracleException)
             {
-                Console.WriteLine(ex.Message);
+                Console.WriteLine($"Oracle: {oracleException.Message}");
+            }
+            catch (Exception generalException)
+            {
+                Console.WriteLine($"General: {generalException.Message}");
             }
 
             return list;

@@ -75,6 +75,12 @@ namespace Oed.ExtensionsLibraryTestProject
             // assert is ExpectedException
         }
 
+        [TestMethod]
+        [TestTraits(Trait.IntExtensions)]
+        public void SequenceFindMissingTest()
+        {
+        }
+
 
     }
 }

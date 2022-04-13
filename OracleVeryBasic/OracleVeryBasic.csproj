@@ -10,4 +10,9 @@
 		<PackageReference Include="Oracle.ManagedDataAccess.Core" Version="3.21.41" />
 	</ItemGroup>
 
+
+	<ItemGroup>
+	  <ProjectReference Include="..\DataReaderLibrary\DataReaderLibrary.csproj" />
+	</ItemGroup>
+
 </Project>

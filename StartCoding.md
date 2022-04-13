@@ -31,3 +31,5 @@ Select `Blank solution`
 
 - Main project namespace: usually will start with company name followed by intent, for example, Oed.SidesConnector but since our applications are kown as OED we can simple use SidesConnector.
 - Support projects should conveym purpose/intent, for example for DataAccess, Common.DataAccess but could also be simply DataAccess. If there are third party data access libraries e.g. SomeCompany with a namespace of SomeCompany.DataAccess then use Common.DataAccess. We will get into namespaces in code and aliasing later on.
+
+&nbsp;&nbsp;![img](https://img.shields.io/badge/Karen%20Payne-Visual%20Studio%20training-lightgrey)

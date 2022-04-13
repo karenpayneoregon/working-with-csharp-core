@@ -121,6 +121,12 @@
   <data name="blueInformation_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\blueInformation_32.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="exclamation" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\exclamation.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="exclamation24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\exclamation24.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Explaination" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Explaination.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
