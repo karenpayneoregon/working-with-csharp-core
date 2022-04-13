@@ -13,7 +13,9 @@ namespace Oed.ExtensionsLibraryTestProject.Base
         PlaceHolder,
         DateTimeExtensions,
         BoolExtensions,
-        IntExtensions
+        IntExtensions,
+        StringExtensions,
+        StringArrayExtensions
     }
     /// <summary>
     /// Declarative class for using Trait enum about for traits on test method.
