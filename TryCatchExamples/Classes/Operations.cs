@@ -30,6 +30,7 @@ namespace TryCatchExamples.Classes
 
             return result;
         }
+
         public static (int? result, bool success) MuchBetter(string value = "ABC") 
             => int.TryParse(value, out var resultValue) ? 
                 (resultValue, true) : 
