@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using ConfigurationLibrary.Classes;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using OracleNorthWindLibrary.Interceptors;
@@ -59,57 +60,14 @@ namespace OracleNorthWindLibrary.Data
         }
 
         #region Connection setup
-
-        private static IConfigurationRoot ReadAppsettings(out IConfigurationBuilder builder)
-        {
-            builder = new ConfigurationBuilder().AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
-            IConfigurationRoot config = builder.Build();
-
-            return config; 
-        }
-
         /// <summary>
         /// Vanilla setup indicating our database connection string
         /// </summary>
         /// <param name="optionsBuilder"></param>
         private static void StandardConnection(DbContextOptionsBuilder optionsBuilder)
         {
-            var config = ReadAppsettings(out var builder);
-            optionsBuilder.UseOracle(config.GetConnectionString("DatabaseConnection"));
+            optionsBuilder.UseOracle(ConfigurationHelper.ConnectionString());
         }
-        /// <summary>
-        /// Demo in this case to prevent a Customer Region from being KP
-        /// See test method SaveChangesInterceptor
-        /// </summary>
-        /// <param name="optionsBuilder"></param>
-        private static void ConnectionWithSaveInterceptor(DbContextOptionsBuilder optionsBuilder)
-        {
-            var config = ReadAppsettings(out var builder);
-            optionsBuilder
-                .AddInterceptors(new LoggingSavingChangesInterceptor())
-                .UseOracle(config.GetConnectionString("DatabaseConnection"));
-        }
-
-        private static void ConnectionWithAuditInterceptor(DbContextOptionsBuilder optionsBuilder)
-        {
-            var config = ReadAppsettings(out var builder);
-            optionsBuilder
-                .AddInterceptors(new AuditInterceptor())
-                .UseOracle(config.GetConnectionString("DatabaseConnection"));
-        }
-
-        /// <summary>
-        /// Connection setup for development debugging
-        /// </summary>
-        /// <param name="optionsBuilder"></param>
-        private static void LogQueryInfoToDebugOutputWindow(DbContextOptionsBuilder optionsBuilder)
-        {
-            var config = ReadAppsettings(out var builder);
-            optionsBuilder.UseOracle(config.GetConnectionString("DatabaseConnection"))
-                .EnableSensitiveDataLogging()
-                .LogTo(message => Debug.WriteLine(message));
-        }
-
         #endregion
 
 

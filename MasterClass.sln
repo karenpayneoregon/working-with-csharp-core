@@ -197,7 +197,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GlobbingCoreUnitTestProject
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnhandledConsole", "UnhandledConsole\UnhandledConsole.csproj", "{F8E60501-FED1-44BD-8E57-56501A3BBDEF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TryCatchExamples", "TryCatchExamples\TryCatchExamples.csproj", "{673EC3FB-FDBC-4E5B-8945-97E31B5C8C38}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TryCatchExamples", "TryCatchExamples\TryCatchExamples.csproj", "{673EC3FB-FDBC-4E5B-8945-97E31B5C8C38}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
