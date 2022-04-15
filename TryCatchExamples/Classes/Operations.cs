@@ -15,6 +15,26 @@ namespace TryCatchExamples.Classes
 {
     public class Operations
     {
+
+        public static int StupidNoviceMistake(string value = "ABC")
+        {
+            int result = 0;
+            try
+            {
+                result = Convert.ToInt32(value);
+            }
+            catch (Exception e)
+            {
+
+            }
+
+            return result;
+        }
+        public static (int? result, bool success) MuchBetter(string value = "ABC") 
+            => int.TryParse(value, out var resultValue) ? 
+                (resultValue, true) : 
+                (null, false);
+
         public static (string[] list, Exception exception) ReadFileConventional(string fileName)
         {
             try
