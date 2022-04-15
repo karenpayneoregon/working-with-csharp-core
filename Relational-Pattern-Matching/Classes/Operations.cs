@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Runtime.CompilerServices;
+using Relational_Pattern_Matching.Interfaces;
 using Relational_Pattern_Matching.LanguageExtensions;
 using Relational_Pattern_Matching.Models;
 using static System.Console;
@@ -41,6 +42,20 @@ namespace Relational_Pattern_Matching.Classes
 
                 case { } value when (value <= 3):
                     WriteLine($"I am 3 or less: {value}");
+                    break;
+            }
+        }
+
+        /// <summary>
+        /// </summary>
+        /// <param name="sender"></param>
+        public static void CaseWhenPersonType(IPerson sender)
+        {
+            switch (sender)
+            {
+                case Person { Gender: Gender.Female }:
+                    break;
+                case Employee { Gender: Gender.Female or Gender.Male }:
                     break;
             }
         }
