@@ -48,28 +48,9 @@ namespace OracleNorthWindLibrary.Data
         {
             if (!optionsBuilder.IsConfigured)
             {
-                StandardConnection(optionsBuilder);
-
-                /*
-                 * See also Interceptors.NorthCommandInterceptor
-                 */
-                //Database.SetCommandTimeout(TimeSpan.FromMinutes(2));
-
-
+                optionsBuilder.UseOracle(ConfigurationHelper.ConnectionString());
             }
         }
-
-        #region Connection setup
-        /// <summary>
-        /// Vanilla setup indicating our database connection string
-        /// </summary>
-        /// <param name="optionsBuilder"></param>
-        private static void StandardConnection(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseOracle(ConfigurationHelper.ConnectionString());
-        }
-        #endregion
-
 
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
     }
