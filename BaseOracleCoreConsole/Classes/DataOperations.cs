@@ -38,15 +38,11 @@ namespace BaseOracleCoreConsole.Classes
             DataTable table = new();
 
 
-            if (Operations.ConnectionString().Contains("MasterClass_Notes"))
-            {
-                throw new ConnectionException();
-            }
-
             using var cn = new OracleConnection()
             {
                 ConnectionString = Operations.ConnectionString()
             };
+
             using var cmd = new OracleCommand(
                 "SELECT p.Product_ID, p.Product_Name " +
                 "FROM Products p " +

@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AsyncSimple.Classes;
 using WindowsFormsLibrary.Classes;
 using static System.Threading.Thread;
 
@@ -50,7 +51,7 @@ namespace AsyncSimple
             StatusLabel.Text = "Go again!";
         }
 
-        private void CancelButton_Click(object sender, EventArgs e)
+        private void CancelButton_Click(object sender, EventArgs egEventArgs)
         {
             _cts.Cancel();
         }
@@ -72,6 +73,7 @@ namespace AsyncSimple
             }
 
         }
+
         private void ReportProgress(int value)
         {
             StatusLabel.Text = value.ToString();
@@ -100,5 +102,14 @@ namespace AsyncSimple
 
 
         }
+
+        private async void FakeWorkButton_Click(object sender, EventArgs e)
+        {
+            var service = new SomeService();
+            await Task.Run(() => service.Calculate());
+            Dialogs.Information(this,"Done","Woohoo");
+        }
     }
+
+
 }
