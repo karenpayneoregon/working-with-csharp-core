@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	  <LangVersion>9.0</LangVersion>
+	  <TargetFramework>net5.0</TargetFramework>
+	  <RootNamespace>Oed.ExtensionsLibrary</RootNamespace>
+	  <Authors>Karen Payne</Authors>
+	  <Company>OEDKaren Payne</Company>
+	  <Description>Common date time language extensions</Description>
+	  <PackageIcon>DatePicker_16x.png</PackageIcon>
+	  <PackageIconUrl />
+	  <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+	  <PackageLicenseExpression>MIT</PackageLicenseExpression>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="DatePicker_16x.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
