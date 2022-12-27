@@ -18,11 +18,11 @@ namespace Relational_Pattern_Matching
             //Example1();
             //Example2();
             //Example3();
-            //RecursivePatternStaticCondition();
+            RecursivePatternStaticCondition();
             //switch_expression();
             //CaseWhen();
 
-            Console.ReadLine();
+            //Console.ReadLine();
         }
 
         private static void CaseWhen()

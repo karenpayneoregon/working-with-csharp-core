@@ -139,5 +139,18 @@ FROM [Categories] AS [c]";
 
             Debug.WriteLine($"original name: '{originalProductName}' current: '{currentProductName}'");
         }
+
+        [TestMethod]
+        [TestTraits(Trait.PlaceHolder)]
+        public async Task Employees()
+        {
+            await using var context = new NorthwindContext();
+            var result = context.Employees.ToList();
+            //foreach (var manager in result)
+            //{
+            //    Console.WriteLine($"{manager.FirstName}  {manager.LastName}");
+            //}
+        }
+
     }
 }
